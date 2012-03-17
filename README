@@ -16,6 +16,7 @@ Dependencies (included):
   * FGateway: https://github.com/danfinch/fgateway
   * FInvoke: https://github.com/danfinch/finvoke
   * FModel: https://github.com/danfinch/fmodel
+  * FMarkup: https://github.com/danfinch/fmarkup
 
 License: Apache 2.0
 
