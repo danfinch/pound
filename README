@@ -1,0 +1,28 @@
+
+Pound is an MVC-oriented web framework for F#.
+
+  * Write controllers and views in pure F#
+  * Host JSON-RPC services
+  * Includes platform-agnostic session services
+  * Works both in and outside of ASP.NET
+  * Early releases, no docs or samples
+  
+Dependencies (included):
+  
+  * FSharp PowerPack
+  * Futility: https://github.com/danfinch/futility
+  * JSON.NET: http://json.codeplex.com/
+  * FSerial: https://github.com/danfinch/fserial
+  * FGateway: https://github.com/danfinch/fgateway
+  * FInvoke: https://github.com/danfinch/finvoke
+  * FModel: https://github.com/danfinch/fmodel
+
+License: Apache 2.0
+
+Copyrights:
+
+  * All code (c) 2012 Promitheia
+
+Maintainers:
+
+  * Dan Finch (d@nfin.ch)

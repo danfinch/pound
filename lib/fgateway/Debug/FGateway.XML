@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>FGateway</name></assembly>
+<members>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FGateway.Cookie">
+<summary>
+ A cookie.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FGateway.HttpFile">
+<summary>
+ A file uploaded through HTTP.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.AppendHeader">
+<summary>
+ Append a value to a response header.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.SetHeader">
+<summary>
+ Set a response header.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.SetCookie">
+<summary>
+ Set a response cookie.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.End">
+<summary>
+ End the current request and close the connection.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Redirect">
+<summary>
+ Immediately redirect the request to another URL.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Abort">
+<summary>
+ Abort the current request.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.OutputStream">
+<summary>
+ Stream for the response body.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.SetContentEncoding">
+<summary>
+ Set the content encoding of the response body.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.SetContentType">
+<summary>
+ Set the content type of the response body.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.SetStatusDescription">
+<summary>
+ Set the HTTP status description of the response.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.SetStatusCode">
+<summary>
+ Set the HTTP status code of the response.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.AcceptTypes">
+<summary>
+ Content types requested by the user agent.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.AcceptLanguages">
+<summary>
+ Languages requested by the user agent.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.UserAgent">
+<summary>
+ User agent header.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.ClientHostName">
+<summary>
+ If available, the hostname of the client.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.ClientAddress">
+<summary>
+ IP address of the client.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.InputStream">
+<summary>
+ Stream for the request body.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.ContentType">
+<summary>
+ The content type of the request body.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.ContentEncoding">
+<summary>
+ The encoding of the request body.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.ContentLength">
+<summary>
+ The length of the request body.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Files">
+<summary>
+ Collection of files submitted with this request.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Cookies">
+<summary>
+ Collection of cookies submitted with this request.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Query">
+<summary>
+ Parsed values of the query string component of the requested path.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Form">
+<summary>
+ Values of a form submitted by POST.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Headers">
+<summary>
+ The HTTP headers for this request.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Referrer">
+<summary>
+ Header indicating a referring URL.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.QueryString">
+<summary>
+ Raw query-string component of the requested path.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Method">
+<summary>
+ The raw HTTP method sent by the user agent.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Host">
+<summary>
+ Header indicating the domain name requested by the user agent.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.FullPath">
+<summary>
+ The path requested by the user agent.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Path">
+<summary>
+ The path relative to the current stage of the request.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.Url">
+<summary>
+ The full requested URL.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.IsLocal">
+<summary>
+ Indicates whether this request originates from the local machine.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.IsSecure">
+<summary>
+ Indicates whether this request was made over a secure HTTPS connection.
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.IsAsync">
+<summary>
+ Indicates whether the request was sent with XMLHttpRequest (AJAX).
+</summary>
+</member>
+<member name="F:FGateway.FGateway.Request.State">
+<summary>
+ Container for generic per-request shared cache.
+</summary>
+</member>
+<member name="T:FGateway.Request">
+<summary>
+ Represents an HTTP request.
+</summary>
+</member>
+<member name="M:FGateway.AspNet.request(System.Web.HttpContext)">
+<summary>
+ Create a Pound.Http.Request from an ASP.NET HttpContext.
+</summary>
+</member>
+<member name="T:FGateway.AspNet">
+<summary>
+ Functions for hosting with ASP.NET.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FGateway.Cache">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FGateway.HttpUtil">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FGateway.RequestModule">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FGateway.Route">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:FGateway.SysNet.request(System.Net.HttpListenerContext)">
+<summary>
+ Create a Pound.Http.Request from an HttpListenerContext.
+</summary>
+</member>
+<member name="">
+
+</member>
+<member name="T:FGateway.SysNet">
+<summary>
+ Functions for hosting with HttpListener.
+</summary>
+</member>
+</members>
+</doc>
