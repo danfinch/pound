@@ -4,8 +4,9 @@ namespace Pound.Mvc
 // todo: convert more primitive/bcl types
 // todo: simple values as operation parameters
 // todo: too many guts exposed, behavior not tweakable
-// todo: don't require controller root as domain root
-// todo: general purpose rest controller
+// todo: don't require controller root as domain root (bug)
+// todo: general purpose REST controller (FModel based)
+// todo: move validation to FModel
 
 open System
 open System.IO
@@ -15,7 +16,7 @@ open Futility
 open FGateway
 
 exception HttpError of int
-exception ValidationError of string // move to FModel
+exception ValidationError of string
 
 type Viewer = Viewer of (obj -> Request -> bool)
 type Redirect = Redirect of string
@@ -47,17 +48,6 @@ with
     | Trace -> "TRACE" | Options -> "OPTIONS"
     | Connect -> "CONNECT" | Patch -> "PATCH"
     | Delete -> "DELETE" | Other s -> s
-
-[<CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
-module Method =
-  let parse s =
-    match s |> String.upper with
-    | "HEAD" -> Head | "GET" -> Get
-    | "POST" -> Post | "PUT" -> Put
-    | "DELETE" -> Delete
-    | "TRACE" -> Trace | "OPTIONS" -> Options
-    | "CONNECT" -> Connect | "PATCH" -> Patch
-    | s -> Other (s.ToUpper ())
 
 type Input = {
   Name            : string
@@ -322,25 +312,25 @@ module Controller =
     | Some (x, y) -> Some x
     | _ -> None
   let handle (viewers : Viewer list) (root : Controller) (request : Request) : Request =
-    let con, rpath =
-      match findWithPath request.Path root with
-      | None -> raise (HttpError 404)
-      | Some x -> x
-    let meth = request.Method |> Method.parse
-    let op =
-      con.Operations
-      |> List.tryFind (fun o -> o.Method = meth)
-    match op with
-    | None -> raise (HttpError 405)
-    | Some op ->
-      let pathInvalid =
-        rpath |> String.IsNullOrEmpty |> not
-        && op.Inputs |> List.forall (fun i -> i.Source <> Path)
-      if pathInvalid then
-        raise (HttpError 404)
-      else
-        let request = { request with Path = rpath }
-        try
+    try
+      let con, rpath =
+        match findWithPath request.Path root with
+        | None -> raise (HttpError 404)
+        | Some x -> x
+      let meth = request.Method |> Method.parse
+      let op =
+        con.Operations
+        |> List.tryFind (fun o -> o.Method = meth)
+      match op with
+      | None -> raise (HttpError 405)
+      | Some op ->
+        let pathInvalid =
+          rpath |> String.IsNullOrEmpty |> not
+          && op.Inputs |> List.forall (fun i -> i.Source <> Path)
+        if pathInvalid then
+          raise (HttpError 404)
+        else
+          let request = { request with Path = rpath }
           let input = op |> Input.fromRequest request
           let result = op.Invoke input
           match result with
@@ -356,7 +346,7 @@ module Controller =
             |> Seq.find (fun (Viewer vr) -> vr result request)
             |> ignore
             request
-        with
-        | HttpError e ->
-          request.SetStatusCode e
-          request
+    with HttpError e ->
+      request.SetStatusCode e
+      request
+

@@ -2,6 +2,7 @@
 namespace Pound.Sessions
 
 // todo: simple persistent session state
+// todo: helpers for tcp/pipes
 
 open System
 open Futility
@@ -104,8 +105,8 @@ module Session =
         Timeout = s.Timeout
         Address = s.Address
       }
-    let client (url : string) (timeout : TimeSpan) : SessionStore =
-      let client : Service = Proxy.http Format.bson url
+    let client (url : string) sessionTimeout requestTimeout : SessionStore =
+      let client : Service = Proxy.http Format.bson requestTimeout url
       let save s = s |> s2o |> client.Save
       let load id =
         match id |> client.Load with 
@@ -121,7 +122,7 @@ module Session =
         Delete = delete
         Count = count
         Purge = purge
-        Timeout = timeout
+        Timeout = sessionTimeout
       }
     let service (store : SessionStore) =
       let load i =
