@@ -7,9 +7,8 @@ Pound is an MVC-oriented web framework for F#.
   * Works both in and outside of ASP.NET
   * Early releases, no docs or samples
   
-Dependencies (included):
+Dependencies (submodules):
   
-  * FSharp PowerPack
   * Futility: https://github.com/danfinch/futility
   * JSON.NET: http://json.codeplex.com/
   * FSerial: https://github.com/danfinch/fserial

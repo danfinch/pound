@@ -1,0 +1,21 @@
+[submodule "lib/futility"]
+	path = lib/futility
+	url = https://github.com/danfinch/futility.git
+[submodule "lib/fserial"]
+	path = lib/fserial
+	url = https://github.com/danfinch/fserial.git
+[submodule "lib/fgateway"]
+	path = lib/fgateway
+	url = https://github.com/danfinch/fgateway.git
+[submodule "lib/jsonnet"]
+	path = lib/jsonnet
+	url = https://github.com/JamesNK/Newtonsoft.Json.git
+[submodule "lib/fmarkup"]
+	path = lib/fmarkup
+	url = https://github.com/danfinch/fmarkup.git
+[submodule "lib/fmodel"]
+	path = lib/fmodel
+	url = https://github.com/danfinch/fmodel.git
+[submodule "lib/finvoke"]
+	path = lib/finvoke
+	url = https://github.com/danfinch/finvoke.git
