@@ -57,31 +57,31 @@
 	</Target>
 	-->
   <ItemGroup>
-    <ProjectReference Include="..\..\..\fgateway\src\FGateway\FGateway.fsproj">
+    <ProjectReference Include="..\..\lib\fgateway\src\FGateway\FGateway.fsproj">
       <Project>{5FDA2352-91CF-402F-8A5A-093C9D951728}</Project>
       <Name>FGateway</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\finvoke\src\FInvoke\FInvoke.fsproj">
+    <ProjectReference Include="..\..\lib\finvoke\src\FInvoke\FInvoke.fsproj">
       <Project>{1DF477B5-5D70-4453-A807-187160C16C50}</Project>
       <Name>FInvoke</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\fmarkup\src\FMarkup\FMarkup.fsproj">
+    <ProjectReference Include="..\..\lib\fmarkup\src\FMarkup\FMarkup.fsproj">
       <Project>{F9F2F85D-697C-42FD-A9EB-6FB1B9B1DC42}</Project>
       <Name>FMarkup</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\fmodel\src\FModel\FModel.fsproj">
+    <ProjectReference Include="..\..\lib\fmodel\src\FModel\FModel.fsproj">
       <Project>{43CBA75A-4D6F-4E23-AB94-BF7E55B87B84}</Project>
       <Name>FModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\fserial\src\FSerial\FSerial.fsproj">
+    <ProjectReference Include="..\..\lib\fserial\src\FSerial\FSerial.fsproj">
       <Project>{8958C7C8-6BA5-4574-99DA-7D5224598551}</Project>
       <Name>FSerial</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\futility\src\Futility\Futility.fsproj">
+    <ProjectReference Include="..\..\lib\futility\src\Futility\Futility.fsproj">
       <Project>9982C39B-74B0-4B7A-B658-905777359DAD</Project>
       <Name>Futility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\jsonnet\Src\Newtonsoft.Json\Newtonsoft.Json.csproj">
+    <ProjectReference Include="..\..\lib\jsonnet\Src\Newtonsoft.Json\Newtonsoft.Json.csproj">
       <Project>{A9AE40FF-1A21-414A-9FE7-3BE13644CC6D}</Project>
       <Name>Newtonsoft.Json</Name>
     </ProjectReference>
